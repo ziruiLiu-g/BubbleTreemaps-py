@@ -51,3 +51,9 @@ Use the command below to install the .exe, make sure you execute the command und
 ![](https://github.com/ziruiLau/BubbleTreemaps-py/blob/master/pic/1650694563(1).jpg)
 
 3. Now you can drag the parameter bars and have fun!!
+
+
+## How to use
+This is how it looks like
+
+![](https://github.com/ziruiLau/BubbleTreemaps-py/blob/master/pic/1650694930(1).jpg)
