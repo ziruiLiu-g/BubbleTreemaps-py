@@ -1,0 +1,3 @@
+http://graphics.uni-konstanz.de/publikationen/Goertler2018BubbleTreemapsUncertainty/bubble-treemaps.pdf
+https://github.com/grtlr/bubble-treemaps/blob/master/index.html
+https://github.com/pybox2d/pybox2d/blob/master/library/Box2D/examples/motor_joint.py
