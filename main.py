@@ -27,7 +27,7 @@ class Window(QDialog):
         self.smoothness = QSlider()
         self.smoothness.setMinimum(1)
         self.smoothness.setMaximum(200)
-        self.smoothness.setValue(1)
+        self.smoothness.setValue(5)
         self.smoothness.setSingleStep(1)
         self.smoothness.setOrientation(QtCore.Qt.Horizontal)
 
