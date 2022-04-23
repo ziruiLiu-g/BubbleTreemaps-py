@@ -42,3 +42,12 @@ Use the command below to install the .exe, make sure you execute the command und
 
 
 ## How to use
+1. Once you got the .exe, open it and upload your data(.json)
+
+![](https://github.com/ziruiLau/BubbleTreemaps-py/blob/master/pic/1650694419(1).jpg)
+
+2. Plot the result 
+
+![](https://github.com/ziruiLau/BubbleTreemaps-py/blob/master/pic/1650694563(1).jpg)
+
+3. Now you can drag the parameter bars and have fun!!
