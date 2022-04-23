@@ -26,9 +26,9 @@ class Window(QDialog):
         self.smoothness_label.setAlignment(QtCore.Qt.AlignCenter)
         self.smoothness = QSlider()
         self.smoothness.setMinimum(1)
-        self.smoothness.setMaximum(3000)
+        self.smoothness.setMaximum(200)
         self.smoothness.setValue(1)
-        self.smoothness.setSingleStep(50)
+        self.smoothness.setSingleStep(1)
         self.smoothness.setOrientation(QtCore.Qt.Horizontal)
 
         self.padding_label = QLabel()
@@ -37,8 +37,8 @@ class Window(QDialog):
         self.padding_label.setAlignment(QtCore.Qt.AlignCenter)
         self.padding = QSlider()
         self.padding.setMinimum(1)
-        self.padding.setMaximum(2000)
-        self.padding.setValue(50)
+        self.padding.setMaximum(200)
+        self.padding.setValue(1)
         self.padding.setOrientation(QtCore.Qt.Horizontal)
 
         self.button = QPushButton('Plot')
@@ -79,13 +79,24 @@ class Window(QDialog):
             linewidth = c['strokeWidth']
             ax.add_patch(Arc((x, y), r, r, 270, theta1=startAng, theta2=endAng, linewidth=linewidth, color='black'))
 
+
+        maxlimx = 0
+        minlimx = 0
+        maxlimy = 0
+        minlimy = 0
         for c in self.b.hierarchyRoot.leaves():
             x, y, r = c.x, c.y, c.r
+            maxlimx = max(maxlimx, x + r)
+            maxlimy = max(maxlimy, y + r)
+            minlimx = min(minlimx, x - r)
+            minlimy = min(minlimy, y - r)
             color = c.color
             ax.add_patch(plt.Circle((x, y), r, linewidth=2, edgecolor='black', facecolor=color))
 
         ax.relim()
         ax.autoscale_view()
+        # plt.xlim(minlimx, maxlimx)
+        # plt.ylim(minlimy, maxlimy)
         self.canvas.draw()
 
     def getTree(self):
