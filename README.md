@@ -24,10 +24,10 @@ main.py: The visualization of the project, include the GUI code
 
 Some important package that will be used in the project
 
-|                |Github                     |
-|----------------|-------------------------------|
-|Box2D|https://github.com/erincatto/box2d|
-|Circlify|https://github.com/elmotec/circlify|
+|                |Github                     | Usage              |
+|----------------|-------------------------------|-------------------------------|
+|Box2D|https://github.com/erincatto/box2d| Physics engine, use to simulate the collison of clusters, avoid overlapping|     
+|Circlify|https://github.com/elmotec/circlify| Use to generate the original positions of the circles|
 
 
 ## Installation
