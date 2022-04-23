@@ -1,4 +1,3 @@
-# importing various libraries
 import math
 import sys
 from PyQt5.QtWidgets import *
@@ -6,13 +5,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 import matplotlib.pyplot as plt
-import random
 from matplotlib.patches import Arc
 import bbtreemap
 import json
 
-# main window
-# which inherits QDialog
 class Window(QDialog):
 
     # constructor
@@ -67,11 +63,8 @@ class Window(QDialog):
         layout.addWidget(self.filepath)
         self.setLayout(layout)
 
-    # action called by the push button
     def plot(self):
         contour = self.getTree()
-
-        # clearing old figure
         self.figure.clear()
 
         ax = self.figure.subplots()
@@ -93,10 +86,6 @@ class Window(QDialog):
 
         ax.relim()
         ax.autoscale_view()
-        # minlim = min(min(ax.get_xlim()), min(ax.get_ylim()))
-        # maxlim = max(max(ax.get_xlim()), max(ax.get_ylim()))
-        # plt.xlim(minlim, maxlim)
-        # plt.ylim(minlim, maxlim)
         self.canvas.draw()
 
     def getTree(self):
@@ -109,31 +98,11 @@ class Window(QDialog):
             ["#8dd3c7", "#ffffb3", "#bebada", "#fb8072", "#80b1d3", "#fdb462", "#b3de69", "#fccde5", "#d9d9d9",
              "#bc80bd", "#ccebc5", "#ffed6f"])
         self.b.doLayout().getContour()
-        # if self.b is not None:
-        #     self.b.set_padding(self.padding.value()).set_curvature(self.smoothness.value())
-        #     self.b.doLayout().getContour()
-        # else:
-        #     self.b = bbtreemap.BubbleTreeMap(json.loads(open(self.filepath.toPlainText()).read())) \
-        #         .set_padding(self.padding.value()) \
-        #         .set_curvature(self.smoothness.value()) \
-        #         .set_width(800) \
-        #         .set_height(800) \
-        #         .set_colormap(
-        #         ["#8dd3c7", "#ffffb3", "#bebada", "#fb8072", "#80b1d3", "#fdb462", "#b3de69", "#fccde5", "#d9d9d9",
-        #          "#bc80bd", "#ccebc5", "#ffed6f"])
-        #     self.b.doLayout().getContour()
         return self.b.contours
 
-# driver code
 if __name__ == '__main__':
-    # creating apyqt5 application
     app = QApplication(sys.argv)
-
-    # creating a window object
     main = Window()
-    main.resize(600, 800)
-    # showing the window
+    main.resize(800, 1000)
     main.show()
-
-    # loop
     sys.exit(app.exec_())

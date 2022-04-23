@@ -1,6 +1,4 @@
 import copy
-import json
-# from Box2D import *
 import Box2D
 
 from Hierarcy import Hierarchy
@@ -328,42 +326,3 @@ class BubbleTreeMap:
     def set_height(self, height):
         self.height = height
         return self
-
-
-# b = BubbleTreeMap(json.loads(open('./data/data.json').read()))\
-#     .set_padding(50)\
-#     .set_curvature(60)\
-#     .set_width(800)\
-#     .set_height(800)\
-#     .set_colormap(["#8dd3c7", "#ffffb3", "#bebada", "#fb8072", "#80b1d3", "#fdb462", "#b3de69", "#fccde5", "#d9d9d9",
-#               "#bc80bd", "#ccebc5", "#ffed6f"])
-# # contours = b.getContour()
-# contours = b.doLayout().getContour()
-#
-# import matplotlib.pyplot as plt
-# from matplotlib.patches import Arc
-# ax = plt.subplot()
-# _, ax = plt.subplots(figsize=(8.0, 8.0))
-#
-#
-# for c in contours:
-#     x = c['x']
-#     y = c['y']
-#     startAng = (c['d'].startAngle / (2* math.pi)) * 360
-#     endAng = (c['d'].endAngle / (2*math.pi)) * 360
-#     r = c['d'].outerRadius  * 2
-#     linewidth = c['strokeWidth']
-#     ax.add_patch(Arc((x, y), r, r, 270, theta1=startAng, theta2=endAng, linewidth=linewidth, color='black'))
-#
-# leaves = b.hierarchyRoot.leaves()
-# for c in leaves:
-#     x, y, r = c.x, c.y, c.r
-#     color = c.color
-#     ax.add_patch(plt.Circle((x, y), r, linewidth=2, edgecolor='black', facecolor = color))
-#
-#
-# ax.relim()
-# ax.autoscale_view()
-# # plt.xlim(xlim_min, xlim_max)
-# # plt.ylim(ylim_min, ylim_max)
-# plt.show()
