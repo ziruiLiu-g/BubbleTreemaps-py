@@ -7,7 +7,7 @@ The original paper please review: http://graphics.uni-konstanz.de/publikationen/
 The JavaScript implementation please review: https://github.com/grtlr/bubble-treemaps
 
 
-## SmartyPants
+## Files
 
 /data: stores files that will be used in the project
 
